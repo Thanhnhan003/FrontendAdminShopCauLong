@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +10,95 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+.card-stepper {
+  z-index: 0;
+}
+
+#progressbar-2 {
+  color: #455A64;
+}
+
+#progressbar-2 li {
+  list-style-type: none;
+  font-size: 13px;
+  width: 50%;
+  float: left;
+  position: relative;
+}
+
+#progressbar-2 #step1:before,
+#progressbar-2 #step2:before,
+#progressbar-2 #step3:before,
+#progressbar-2 #step4:before {
+  content: '\f058';
+  font-family: "Font Awesome 5 Free";
+  color: #fff;
+  width: 37px;
+  text-align: center;
+}
+
+#progressbar-2 #step4:before {
+  content: '\f111';
+}
+
+#progressbar-2 li:before {
+  line-height: 37px;
+  display: block;
+  font-size: 12px;
+  background: #c5cae9;
+  border-radius: 50%;
+}
+
+#progressbar-2 li:after {
+  content: '';
+  width: 100%;
+  height: 10px;
+  background: #c5cae9;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 15px;
+  z-index: -1;
+  transition: background 1s ease;
+}
+
+#progressbar-2 li:nth-child(1):after {
+  left: 1%;
+  width: 100%;
+}
+
+#progressbar-2 li:nth-child(2):after {
+  left: 1%;
+  width: 100%;
+}
+
+#progressbar-2 li:nth-child(3) {
+  left: 0;
+  width: 37px;
+}
+
+#progressbar-2 li:nth-child(3):after {
+  left: 0;
+  width: 0;
+}
+
+#progressbar-2 li.active:before {
+  background: #6520ff;
+}
+
+#progressbar-2 li.active:after {
+  background: #6520ff;
+  animation: backgroundTransition 1s ease forwards;
+}
+
+
+@keyframes backgroundTransition {
+  from {
+    background: #c5cae9;
+  }
+  to {
+    background: #6520ff;
+  }
 }
